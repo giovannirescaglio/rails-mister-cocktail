@@ -1,0 +1,11 @@
+<h1> You'll find your cocktails below : </h1>
+
+<ul>
+  <% @cocktails.each do |cocktail| %>
+  <li>
+    <%= cocktail.name %>
+ </li>
+
+  <% end %>
+</ul>
+

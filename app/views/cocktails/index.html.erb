@@ -1,11 +1,28 @@
-<h1> You'll find your cocktails below : </h1>
+<h1> Mister Cocktail App </h1>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li>
-    <%= cocktail.name %>
- </li>
 
-  <% end %>
-</ul>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- insert <div class="card"> -->
+      <% @cocktails.each do |cocktail| %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card-category">Cocktails</div>
+          <div class="card-description">
+            <h2> <%= link_to cocktail.name, cocktail_path(cocktail)%> </h2>
+            <p> Yummy!!</p>
+          </div>
+          <a class="card-link" href="#" ></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<%= link_to "add a new cocktail", new_cocktail_path, class: "btn btn-primary"  %>
+
 
